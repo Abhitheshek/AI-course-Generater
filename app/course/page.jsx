@@ -1,9 +1,10 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import CourseDisplay from '../components/CourseDisplay';
 
-export default function CoursePage() {
+// Component that uses useSearchParams must be wrapped in Suspense
+function CourseContent() {
   const searchParams = useSearchParams();
   const [courseData, setCourseData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -68,10 +69,28 @@ export default function CoursePage() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 p-2  md:p-4">
-      <div className="max-w-6xl  md:mx-auto mx-2 ">
-        <CourseDisplay courseData={courseData} />
-      </div>
+    <div className="max-w-6xl md:mx-auto mx-2">
+      <CourseDisplay courseData={courseData} />
+    </div>
+  );
+}
+
+// Loading fallback for Suspense
+function CourseLoading() {
+  return (
+    <div className="flex justify-center items-center min-h-screen">
+      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+    </div>
+  );
+}
+
+// Main page component with Suspense boundary
+export default function CoursePage() {
+  return (
+    <main className="min-h-screen bg-gray-50 p-2 md:p-4">
+      <Suspense fallback={<CourseLoading />}>
+        <CourseContent />
+      </Suspense>
     </main>
   );
 }
