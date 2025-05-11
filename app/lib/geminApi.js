@@ -201,6 +201,10 @@ async function generateFallbackCourse(courseTitle, difficultyLevel) {
   }
 }
 
+export async function generateCourse(courseTitle, difficultyLevel) {
+  return generateCourseContent(courseTitle, difficultyLevel);
+}
+
 export async function generateCourseContent(courseTitle, difficultyLevel) {
   try {
     // First, generate the course structure without videos

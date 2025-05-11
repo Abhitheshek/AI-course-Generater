@@ -761,7 +761,7 @@ export default function LandingPage() {
                 </div>
               </div>
               <p className="text-gray-600 mb-6">
-                "This platform has completely transformed how I learn. The AI-generated courses are incredibly well-structured and the flashcards help me retain information better than ever."
+                &quot;This platform has completely transformed how I learn. The AI-generated courses are incredibly well-structured and the flashcards help me retain information better than ever.&quot;
               </p>
               <div className="flex items-center">
                 <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold mr-3">
@@ -790,7 +790,7 @@ export default function LandingPage() {
                 </div>
               </div>
               <p className="text-gray-600 mb-6">
-                "I've tried many learning platforms, but this one stands out. The progress tracking keeps me motivated, and the quizzes help identify areas where I need more focus."
+                &quot;I&apos;ve tried many learning platforms, but this one stands out. The progress tracking keeps me motivated, and the quizzes help identify areas where I need more focus.&quot;
               </p>
               <div className="flex items-center">
                 <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold mr-3">
@@ -819,7 +819,7 @@ export default function LandingPage() {
                 </div>
               </div>
               <p className="text-gray-600 mb-6">
-                "As a teacher, I use this platform to create supplementary materials for my students. The AI course generator saves me hours of work and my students love the interactive elements."
+                &quot;As a teacher, I use this platform to create supplementary materials for my students. The AI course generator saves me hours of work and my students love the interactive elements.&quot;
               </p>
               <div className="flex items-center">
                 <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 font-bold mr-3">

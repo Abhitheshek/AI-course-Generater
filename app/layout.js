@@ -6,7 +6,7 @@ import GeminiChatbot from './components/geminiChatbot'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'LearnHub - AI-Powered Learning Platform',
+  title: 'StudyBuddy - AI-Powered Learning Platform',
   description: 'Create personalized courses, track your progress, and enhance your learning with AI-powered tools',
 }
 
