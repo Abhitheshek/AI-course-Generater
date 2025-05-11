@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Prose styling for markdown content */
+.prose h1 {
+  @apply text-3xl font-bold mb-4 mt-8;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.prose h2 {
+  @apply text-2xl font-bold mb-3 mt-6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.prose h3 {
+  @apply text-xl font-semibold mb-2 mt-5;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.prose p {
+  @apply my-4 text-gray-700;
+}
+
+.prose ul {
+  @apply list-disc pl-6 my-4;
+}
+
+.prose ol {
+  @apply list-decimal pl-6 my-4;
+}
+
+.prose li {
+  @apply mb-1;
+}
+
+.prose pre {
+  @apply bg-gray-100 text-black p-4 rounded-md my-4 overflow-auto;
+}
+
+.prose code {
+  @apply font-mono text-sm bg-gray-100 text-black px-1 py-0.5 rounded;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 text-black;
+}
+
+.prose strong {
+  @apply font-bold;
+}
+
+.prose em {
+  @apply italic;
+}
+
+.prose a {
+  @apply text-indigo-600 hover:underline;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-gray-200 pl-4 italic my-4;
+}
+
+.prose table {
+  @apply w-full border-collapse my-4;
+}
+
+.prose th, .prose td {
+  @apply border border-gray-300 p-2;
+}
+
+.prose th {
+  @apply bg-gray-50;
+}
+
+/* Add aspect ratio support */
+.aspect-w-16 {
+  position: relative;
+  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+}
+
+.aspect-h-9 {
+  --tw-aspect-h: 9;
+  --tw-aspect-w: 16;
+}
+
+.aspect-w-16 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
