@@ -1,13 +1,13 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Initialize the Gemini API with your API key
-const genAI = new GoogleGenerativeAI("AIzaSyArlkCUHxkzWPRpIib76wu46rpNwuW2XTA");
+const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY);
 
 // Get the generative model
-const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
 // YouTube API key - you'll need to get one from Google Cloud Console
-const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY || "AIzaSyBp3rWVwwzVM6IBxxogqXmLlq5mXkEwHRo";
+const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY || "AIzaSyBp3rWVwwzVM6IBxxogqXmLlq5mXkEwHRo" ;
 
 // Function to get module-specific videos
 export async function getModuleVideos(moduleTitle) {
@@ -53,6 +53,7 @@ async function searchYouTubeVideos(query, maxResults = 3) {
       maxResults: maxResults,
       key: YOUTUBE_API_KEY,
       type: 'video',
+      videoDuration: 'long',
       videoDefinition: 'high',
       relevanceLanguage: 'en',
       publishedAfter: '2022-01-01T00:00:00Z', // Videos published after 2022

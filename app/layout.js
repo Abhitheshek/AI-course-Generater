@@ -2,8 +2,13 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Navbar from './components/Navbar'
 import GeminiChatbot from './components/geminiChatbot'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: ['system-ui', 'arial']
+})
 
 export const metadata = {
   title: 'StudyBuddy - AI-Powered Learning Platform',
@@ -19,6 +24,7 @@ export default function RootLayout({ children }) {
           {children}
         </div>
         <GeminiChatbot/>
+        <SpeedInsights/>
       </body>
     </html>
   )

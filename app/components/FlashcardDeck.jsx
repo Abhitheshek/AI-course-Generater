@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // Initialize the Gemini API with your API key
 const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY || "YOUR_API_KEY_HERE");
-const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
 export default function FlashcardDeck({ moduleData, returnUrl }) {
   const router = useRouter();
